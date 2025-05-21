@@ -38,7 +38,7 @@ export default function Card({
   return (
     <div 
       className={clsx(
-        'bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-md shadow-gray-300 dark:shadow-none overflow-hidden border border-gray-100 dark:border-gray-700',
+        'bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-md shadow-gray-300 dark:shadow-none overflow-hidden border border-gray-100 dark:border-gray-700',
         serviceType !== 'default' && 'border-t-4',
         getServiceBorderColor(),
         className
@@ -53,7 +53,7 @@ export default function Card({
         {children}
       </div>
       {footer && (
-        <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-700">
+        <div className="px-6 py-4 bg-gray-100 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-700">
           {footer}
         </div>
       )}
