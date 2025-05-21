@@ -7,4 +7,15 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  // Configuração para garantir que as rotas funcionem corretamente
+  server: {
+    host: true
+  },
+  // Configuração para o build
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: false
+  }
 });
