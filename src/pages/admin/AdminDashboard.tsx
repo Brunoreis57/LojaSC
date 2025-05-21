@@ -115,15 +115,13 @@ export default function AdminDashboard() {
           transition={{ duration: 0.4 }}
         >
           <Card serviceType="admin" className="h-full">
-            <div className="flex justify-between items-start">
-              <div>
-                <div className="flex items-center">
-                  <DollarSign className="h-5 w-5 text-emerald-500 mr-2" />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Faturamento Total</h3>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{getPeriodLabel()}</p>
+            <div className="flex flex-col">
+              <div className="flex items-center mb-1">
+                <DollarSign className="h-5 w-5 text-emerald-500 mr-2" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Faturamento Total</h3>
               </div>
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">{formatCurrency(totalRevenue)}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{getPeriodLabel()}</p>
+              <span className="text-3xl font-bold text-gray-900 dark:text-white mt-2">{formatCurrency(totalRevenue)}</span>
             </div>
             
             <div className="mt-6 space-y-3">
@@ -166,15 +164,13 @@ export default function AdminDashboard() {
           transition={{ duration: 0.4, delay: 0.1 }}
         >
           <Card serviceType="admin" className="h-full">
-            <div className="flex justify-between items-start">
-              <div>
-                <div className="flex items-center">
-                  <Calendar className="h-5 w-5 text-emerald-500 mr-2" />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Agendamentos</h3>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{getPeriodLabel()}</p>
+            <div className="flex flex-col">
+              <div className="flex items-center mb-1">
+                <Calendar className="h-5 w-5 text-emerald-500 mr-2" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Agendamentos</h3>
               </div>
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">{totalAppointments}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{getPeriodLabel()}</p>
+              <span className="text-3xl font-bold text-gray-900 dark:text-white mt-2">{totalAppointments}</span>
             </div>
             
             <div className="mt-6 space-y-3">
@@ -217,15 +213,13 @@ export default function AdminDashboard() {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <Card serviceType="admin" className="h-full">
-            <div className="flex justify-between items-start">
-              <div>
-                <div className="flex items-center">
-                  <Users className="h-5 w-5 text-emerald-500 mr-2" />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Funcionários</h3>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Total</p>
+            <div className="flex flex-col">
+              <div className="flex items-center mb-1">
+                <Users className="h-5 w-5 text-emerald-500 mr-2" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Funcionários</h3>
               </div>
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">{totalEmployees}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Total</p>
+              <span className="text-3xl font-bold text-gray-900 dark:text-white mt-2">{totalEmployees}</span>
             </div>
             
             <div className="mt-6 space-y-3">
