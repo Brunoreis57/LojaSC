@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Barbershop theme */
+    --barber-primary: 24 9% 10%;
+    --barber-primary-foreground: 60 9.1% 97.8%;
+    --barber-secondary: 60 4.8% 95.9%;
+    --barber-secondary-foreground: 24 9.8% 10%;
+    --barber-accent: 12 76.4% 61%;
+
+    /* Car wash theme */
+    --wash-primary: 221.2 83.2% 53.3%;
+    --wash-primary-foreground: 210 40% 98%;
+    --wash-secondary: 210 40% 96.1%;
+    --wash-secondary-foreground: 222.2 47.4% 11.2%;
+    --wash-accent: 187 75% 64%;
+
+    /* Auto detailing theme */
+    --detail-primary: 262.1 83.3% 57.8%;
+    --detail-primary-foreground: 210 40% 98%;
+    --detail-secondary: 210 40% 96.1%;
+    --detail-secondary-foreground: 222.2 47.4% 11.2%;
+    --detail-accent: 291 64% 42%;
+
+    /* Common colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --success: 142.1 76.2% 36.3%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Barbershop theme (dark) */
+    --barber-primary: 24 9.8% 10%;
+    --barber-primary-foreground: 60 9.1% 97.8%;
+    --barber-secondary: 12 6.5% 15.1%;
+    --barber-secondary-foreground: 60 9.1% 97.8%;
+    --barber-accent: 20 90% 64%;
+
+    /* Car wash theme (dark) */
+    --wash-primary: 217.2 91.2% 59.8%;
+    --wash-primary-foreground: 222.2 47.4% 11.2%;
+    --wash-secondary: 217.2 32.6% 17.5%;
+    --wash-secondary-foreground: 210 40% 98%;
+    --wash-accent: 199 89% 48%;
+
+    /* Auto detailing theme (dark) */
+    --detail-primary: 263.4 70% 50.4%;
+    --detail-primary-foreground: 210 40% 98%;
+    --detail-secondary: 278.2 32.6% 17.5%;
+    --detail-secondary-foreground: 210 40% 98%;
+    --detail-accent: 291 64% 42%;
+
+    /* Common colors (dark) */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --success: 142.1 70.6% 45.3%;
+    --warning: 48 96% 53%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.service-card {
+  @apply relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.service-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+}
+
+.service-card:hover::before {
+  @apply opacity-10;
+}
+
+/* Barbershop specific */
+.barber-card::before {
+  background: linear-gradient(45deg, hsl(var(--barber-primary)), hsl(var(--barber-accent)));
+}
+
+/* Car wash specific */
+.wash-card::before {
+  background: linear-gradient(45deg, hsl(var(--wash-primary)), hsl(var(--wash-accent)));
+}
+
+/* Auto detailing specific */
+.detail-card::before {
+  background: linear-gradient(45deg, hsl(var(--detail-primary)), hsl(var(--detail-accent)));
+}
+
+/* Loyalty progress bar styling */
+.loyalty-progress-container {
+  @apply h-4 w-full bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700;
+}
+
+.loyalty-progress-bar {
+  @apply h-full rounded-full transition-all duration-500 ease-out;
+}
+
+.loyalty-progress-bar.barber {
+  @apply bg-gradient-to-r from-amber-700 to-amber-500;
+}
+
+.loyalty-progress-bar.wash {
+  @apply bg-gradient-to-r from-blue-700 to-blue-500;
+}
+
+.loyalty-progress-bar.detail {
+  @apply bg-gradient-to-r from-purple-700 to-purple-500;
+}
