@@ -54,7 +54,7 @@ export default function Home() {
         console.log(`Clicou no card ${title}`);
         handleNavigate(path);
       }}
-      className={`service-card ${className} bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-md shadow-gray-300 dark:shadow-none flex flex-col p-6 text-center cursor-pointer`}
+      className={`service-card ${className} bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl dark:shadow-md shadow-gray-400 dark:shadow-none flex flex-col p-6 text-center cursor-pointer`}
     >
       <h2 className="text-xl font-bold mb-2 text-center">
         {title} {emoji}

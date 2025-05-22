@@ -113,7 +113,11 @@
 }
 
 .service-card {
-  @apply relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  @apply relative overflow-hidden transition-all duration-300 hover:-translate-y-1;
+}
+
+.service-card:hover {
+  @apply shadow-2xl shadow-gray-500 dark:shadow-xl;
 }
 
 .service-card::before {

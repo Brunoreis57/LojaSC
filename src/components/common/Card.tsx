@@ -38,7 +38,7 @@ export default function Card({
   return (
     <div 
       className={clsx(
-        'bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-md shadow-gray-300 dark:shadow-none overflow-hidden border border-gray-100 dark:border-gray-700',
+        'bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl dark:shadow-md shadow-gray-400 dark:shadow-none overflow-hidden border border-gray-100 dark:border-gray-700',
         serviceType !== 'default' && 'border-t-4',
         getServiceBorderColor(),
         className
