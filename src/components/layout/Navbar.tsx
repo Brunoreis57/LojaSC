@@ -73,12 +73,23 @@ export default function Navbar() {
     }
     
     if (user.role === 'employee') {
-      return [
+      // Base navigation items for all employees
+      const baseItems = [
         { name: 'Dashboard', href: `/${user.serviceType}/funcionario` },
         { name: 'Agenda', href: `/${user.serviceType}/funcionario/agenda` },
         { name: 'Despesas', href: `/${user.serviceType}/funcionario/despesas` },
         { name: 'Despesas Arquivadas', href: `/${user.serviceType}/funcionario/despesas-arquivadas` },
       ];
+      
+      // Add checklist link for car wash and auto detailing employees
+      if (user.serviceType === 'lavagem' || user.serviceType === 'estetica') {
+        baseItems.splice(1, 0, { 
+          name: 'Checklists', 
+          href: `/${user.serviceType}/checklist/new` 
+        });
+      }
+      
+      return baseItems;
     }
     
     return [];

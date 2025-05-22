@@ -28,6 +28,10 @@ import EmployeeManagement from './pages/admin/EmployeeManagement';
 import ExpenseManagement from './pages/admin/ExpenseManagement';
 import BusinessSettings from './pages/admin/BusinessSettings';
 
+// Checklist Pages
+import LavagemChecklistPage from './pages/lavagem/ChecklistPage';
+import EsteticaChecklistPage from './pages/estetica/ChecklistPage';
+
 function App() {
   return (
     <Routes>
@@ -67,6 +71,8 @@ function App() {
           <Route path="/lavagem/funcionario/agenda" element={<ManageSchedule serviceType="lavagem" />} />
           <Route path="/lavagem/funcionario/despesas" element={<ExpenseForm serviceType="lavagem" />} />
           <Route path="/lavagem/funcionario/despesas-arquivadas" element={<ArchivedExpenses serviceType="lavagem" />} />
+          <Route path="/lavagem/checklist/:vehicleId" element={<LavagemChecklistPage />} />
+          <Route path="/lavagem/checklist/new" element={<LavagemChecklistPage />} />
           
           {/* Auto Detailing */}
           <Route path="/estetica/cliente" element={<ClientDashboard serviceType="estetica" />} />
@@ -75,6 +81,8 @@ function App() {
           <Route path="/estetica/funcionario/agenda" element={<ManageSchedule serviceType="estetica" />} />
           <Route path="/estetica/funcionario/despesas" element={<ExpenseForm serviceType="estetica" />} />
           <Route path="/estetica/funcionario/despesas-arquivadas" element={<ArchivedExpenses serviceType="estetica" />} />
+          <Route path="/estetica/checklist/:vehicleId" element={<EsteticaChecklistPage />} />
+          <Route path="/estetica/checklist/new" element={<EsteticaChecklistPage />} />
         </Route>
         
         {/* Admin Dashboard Routes */}
