@@ -88,17 +88,14 @@ export default function Home() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-3xl font-bold text-gray-900 dark:text-white flex items-center"
+            className="text-4xl font-bold text-gray-900 dark:text-white flex items-center"
           >
             <span className="text-emerald-600 dark:text-emerald-400">MV</span>
             <span className="mx-2">•</span>
             <span>Serviços</span>
           </motion.div>
         </div>
-        <h1 className="text-4xl font-bold mb-3 text-gray-900 dark:text-white">
-          Central de Serviços
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mt-3">
           Qual serviço você deseja acessar?
         </p>
       </motion.div>
