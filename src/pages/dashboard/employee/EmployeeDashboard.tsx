@@ -155,7 +155,7 @@ export default function EmployeeDashboard({ serviceType }: EmployeeDashboardProp
           </h2>
           
           <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 mb-4">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
               <div>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   {getEarningsLabel()}
@@ -165,7 +165,7 @@ export default function EmployeeDashboard({ serviceType }: EmployeeDashboardProp
                 </h3>
               </div>
               
-              <div className="flex space-x-2">
+              <div className="flex flex-wrap gap-2">
                 <Button 
                   variant={earningsMode === 'day' ? 'primary' : 'outline'}
                   serviceType={serviceType}
